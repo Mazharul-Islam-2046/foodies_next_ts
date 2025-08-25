@@ -1,5 +1,16 @@
-import { signIn } from "@/auth"
+"use server"
 
-export const logIn = async (provider: string) => {
-    signIn(provider, { callbackUrl: "/" })
+
+import { signIn, signOut } from "@/auth";
+import { revalidatePath } from "next/cache";
+
+export const loginWithOAuth = async(provider: string) => {
+  await signIn(provider, { redirectTo: "/" });
+  revalidatePath("/");
+}
+
+
+export const logout = async () => {
+  await signOut({ redirectTo: "/" });
+  revalidatePath("/");
 }
