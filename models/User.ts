@@ -1,6 +1,10 @@
 export type UserRole = "USER" | "RESTAURANT" | "DELIVERY" | "ADMIN";
 
+<<<<<<< HEAD
 export interface User {
+=======
+export interface IUser {
+>>>>>>> baf2801 (Installed the RTK and added the User RTK API)
     id: string;
     name: string;
     email: string;
