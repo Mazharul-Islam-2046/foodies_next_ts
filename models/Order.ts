@@ -1,6 +1,6 @@
 export type OrderStatus = "PENDING" | "CONFIRMED" | "PREPARING" | "ON_THE_WAY" | "DELIVERED" | "CANCELLED" | "RETURNED";
 
-export interface Order {
+export interface IOrder {
     id: string;
     userId: string;
     restaurantId: string;

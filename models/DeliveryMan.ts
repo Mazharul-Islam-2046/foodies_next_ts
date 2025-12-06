@@ -1,4 +1,4 @@
-export interface DeliveryMan {
+export interface IDeliveryMan {
     id: string;
     userId: string; // Reference to the User model
     isAvailable: boolean;

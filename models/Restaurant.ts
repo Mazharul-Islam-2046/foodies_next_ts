@@ -1,7 +1,7 @@
-import { Discount } from "./Discount";
-import { Meal } from "./Meal";
+import { IDiscount } from "./Discount";
+import { IMeal } from "./Meal";
 
-export interface Restaurant {
+export interface IRestaurant {
     id: string;
     ownerId: string;
     name: string;
@@ -11,8 +11,8 @@ export interface Restaurant {
     address: string;
     phoneNumber?: string;
     email?: string;
-    menu: Meal[];
+    menu: IMeal[];
     createdAt: Date;
     updatedAt: Date;
-    Discount?: Discount[];
+    Discount?: IDiscount[];
 }

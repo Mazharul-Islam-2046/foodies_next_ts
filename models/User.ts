@@ -1,6 +1,6 @@
 export type UserRole = "USER" | "RESTAURANT" | "DELIVERY" | "ADMIN";
 
-export interface User {
+export interface IUser {
     id: string;
     name: string;
     email: string;

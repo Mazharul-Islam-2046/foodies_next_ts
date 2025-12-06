@@ -1,0 +1,47 @@
+import { IUser } from '@/models/User'
+import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
+
+
+const userApi = createApi({
+    reducerPath: 'userApi',
+    baseQuery: fetchBaseQuery({ baseUrl: '/api/users' }),
+    tagTypes: ['Users'],
+    endpoints: (builder) => ({
+        getUsers: builder.query<IUser[], void>({
+            query: () => `/`,
+            providesTags: ['Users'],
+        }),
+        getUsersById: builder.query<IUser, string>({
+            query: (id: string) => `/${id}`,
+            providesTags: ['Users'],
+        }),
+        createUser: builder.mutation<IUser, IUser>({
+            query: (user: IUser) => ({
+                url: '/',
+                method: 'POST',
+                body: user,
+            }),
+            invalidatesTags: ['Users']
+        }),
+        deleteUser: builder.mutation({
+            query: (id: string) => ({
+                url: `/${id}`,
+                method: 'DELETE',
+            }),
+            invalidatesTags: ['Users']
+        }),
+        updateUser: builder.mutation<IUser, { id: string, data: Partial<IUser> }>({
+            query: ({ id, data }) => ({
+                url: `/${id}`,
+                method: 'PATCH',
+                body: data,
+            }),
+            invalidatesTags: ['Users']
+        }),
+    }),
+});
+
+
+export const { useGetUsersQuery, useGetUsersByIdQuery, useCreateUserMutation, useDeleteUserMutation, useUpdateUserMutation } = userApi
+
+export default userApi

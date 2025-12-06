@@ -1,6 +1,6 @@
 export type DiscountType = "PERCENTAGE" | "FIXED_AMOUNT" | "BUY_ONE_GET_ONE" | "FREE_DELIVERY" | "SEASONAL" | "LOYALTY" | "PROMOTIONAL" | "ORDER_TOTAL" | "OTHER";
 
-export interface Discount {
+export interface IDiscount {
     id: string;
     type: DiscountType;
     value: number; // percentage (0-100) for PERCENTAGE, fixed amount for FIXED_AMOUNT, etc.
