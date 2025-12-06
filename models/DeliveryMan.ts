@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-export interface DeliveryMan {
-=======
 export interface IDeliveryMan {
->>>>>>> baf2801 (Installed the RTK and added the User RTK API)
     id: string;
     userId: string; // Reference to the User model
     isAvailable: boolean;

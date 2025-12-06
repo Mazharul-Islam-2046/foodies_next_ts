@@ -1,10 +1,6 @@
 export type OrderStatus = "PENDING" | "CONFIRMED" | "PREPARING" | "ON_THE_WAY" | "DELIVERED" | "CANCELLED" | "RETURNED";
 
-<<<<<<< HEAD
-export interface Order {
-=======
 export interface IOrder {
->>>>>>> baf2801 (Installed the RTK and added the User RTK API)
     id: string;
     userId: string;
     restaurantId: string;

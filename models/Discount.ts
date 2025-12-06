@@ -1,10 +1,6 @@
 export type DiscountType = "PERCENTAGE" | "FIXED_AMOUNT" | "BUY_ONE_GET_ONE" | "FREE_DELIVERY" | "SEASONAL" | "LOYALTY" | "PROMOTIONAL" | "ORDER_TOTAL" | "OTHER";
 
-<<<<<<< HEAD
-export interface Discount {
-=======
 export interface IDiscount {
->>>>>>> baf2801 (Installed the RTK and added the User RTK API)
     id: string;
     type: DiscountType;
     value: number; // percentage (0-100) for PERCENTAGE, fixed amount for FIXED_AMOUNT, etc.
