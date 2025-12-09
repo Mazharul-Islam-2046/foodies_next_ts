@@ -3,7 +3,7 @@ import { PrismaAdapter } from "@auth/prisma-adapter";
 import Google from "next-auth/providers/google";
 import Credentials from "next-auth/providers/credentials";
 import GitHub from "next-auth/providers/github";
-import { db } from "./lib/db";
+import { prisma } from "./lib/prisma";
 
 export const {
   handlers: { GET, POST },
@@ -11,7 +11,7 @@ export const {
   signOut,
   auth,
 } = NextAuth({
-  adapter: PrismaAdapter(db),
+  adapter: PrismaAdapter(prisma),
   session: {
     strategy: "jwt",
   },
